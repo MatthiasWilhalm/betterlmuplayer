@@ -1,0 +1,263 @@
+.player-control-panel > #playpause {
+    background-image: url("https://friedmar.net/assets/play.svg");
+    filter: invert(1);
+    background-repeat: no-repeat;
+    transition: transform 100ms ease-in;
+}
+
+#playpause {
+    background-image: url("https://friedmar.net/assets/play.svg");
+    filter: invert(1);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transition: transform 100ms ease-in;
+}
+
+#playpause:hover {
+    transform: scale(1.1);
+    background-position: 0 0 !important;
+}
+
+.control {
+    border: none;
+    background-color: #5b5b5b;
+    background-image: none;
+}
+
+.control .progress {
+    background-image: none;
+    background-color: black;
+}
+
+/*time*/
+
+#time {
+    color: white;
+    font-weight: bold;
+}
+
+#elapsed {
+    width: 63px;
+    overflow-x: hidden;
+    top: 7px;
+    position: relative;
+    animation-name: elapsedin;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in;
+}
+
+#time:hover > #elapsed {
+    opacity: 0;
+    animation-name: elapsedout;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in;
+}
+
+#time:hover > #remaining {
+    animation-name: remainingin;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in;
+    opacity: 1;
+}
+
+#remaining {
+    width: 68px;
+    overflow-x: hidden;
+    opacity: 0;
+    top: -7px;
+    position: relative;
+    animation-name: remainingout;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in;
+}
+
+@keyframes remainingin {
+    from {
+        top: -20px;
+        opacity: 0;
+    }
+    to {
+        top: -7px;
+        opacity: 1;
+    }
+}
+
+@keyframes remainingout {
+    from {
+        top: -7px;
+        opacity: 1;
+    }
+    to {
+        top: -20px;
+        opacity: 0;
+    }
+}
+
+@keyframes elapsedin {
+    from {
+        top: 30px;
+        opacity: 0;
+    }
+    to {
+        top: 7px;
+        opacity: 1;
+    }
+}
+
+@keyframes elapsedout {
+    from {
+        top: 7px;
+        opacity: 1;
+    }
+    to {
+        top: 30px;
+        opacity: 0;
+    }
+}
+
+/*overall panel*/
+
+#player-control-panel {
+    position: fixed !important;
+    top: unset !important;
+    border-radius: 5px;
+    border: none;
+    background-color: #464646;
+    background-image: unset;
+    
+    bottom: -50px;
+    animation-name: fadeout;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+}
+
+.player-control-panel-show {
+    bottom: -50px;
+    animation-name: fadeout;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+}
+
+
+#player:hover #player-control-panel {
+    position: fixed !important;
+    top: unset !important;
+    bottom: 20px;
+    /*transition: bottom 200ms ease-in;*/
+    animation-name: fadein;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+}
+
+/*
+.player-control-panel-hover {
+    position: fixed !important;
+    top: unset !important;
+    bottom: 20px;
+    animation-name: fadein;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+}*/
+
+@keyframes fadein {
+    from {
+        bottom: -50px;
+        opacity: 0;
+    }
+    to {
+        bottom: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 20px;
+        opacity: 1;
+    }
+    to {
+        bottom: -50px;
+        opacity: 0;
+    }
+}
+
+#volume {
+    display: none;
+}
+
+
+.player-hover-icon {
+    opacity: 0;
+    position: fixed;
+    width: 30%;
+    height: 40%;
+    margin-left: 35%;
+    margin-right: 35%;
+    top: 30%;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation-name: jumpin;
+    animation-duration: 500ms;
+}
+
+.player-hover-text {
+    position: relative;
+    top: 55%;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 40pt;
+    color: white;
+    text-align: center;
+    font-family: inherit;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+
+.player-hover-text-center {
+    position: relative;
+    top: 23%;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 40pt;
+    color: white;
+    text-align: center;
+    font-family: inherit;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+
+@keyframes jumpin {
+    0% {opacity: 0; transform: scale(0.5);}
+    50% {opacity: 1;}
+    100%  {opacity: 0; transform: scale(0.7);}
+}
+
+.hover-Play {
+    background-image: url('https://friedmar.net/assets/player_screen_icons/Play.svg');
+}
+
+.hover-Pause {
+    background-image: url('https://friedmar.net/assets/player_screen_icons/Pause.svg');
+}
+
+.hover-skip {
+    background-image: url('https://friedmar.net/assets/player_screen_icons/skip.svg');
+}
+
+.hover-rev {
+    background-image: url('https://friedmar.net/assets/player_screen_icons/rev.svg');
+}
+
+.hover-speed_up {
+    background-image: url('https://friedmar.net/assets/player_screen_icons/speed_up.svg');
+}
+
+.hover-slow_down {
+    background-image: url('https://friedmar.net/assets/player_screen_icons/slow_down.svg');
+}
+
+
+#view-box1 {
+    /*cursor: none;*/
+}

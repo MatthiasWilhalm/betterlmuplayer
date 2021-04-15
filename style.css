@@ -1,12 +1,12 @@
 .player-control-panel > #playpause {
-    background-image: url("https://friedmar.net/assets/play.svg");
+    background-image: url("https://friedmar.net/assets/player_screen_icons/Play.svg");
     filter: invert(1);
     background-repeat: no-repeat;
     transition: transform 100ms ease-in;
 }
 
 #playpause {
-    background-image: url("https://friedmar.net/assets/play.svg");
+    background-image: url("https://friedmar.net/assets/player_screen_icons/Play.svg");
     filter: invert(1);
     background-repeat: no-repeat;
     background-position: 0 0;
